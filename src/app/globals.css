@@ -1,26 +1,197 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-serif);
+  --font-serif: var(--font-serif);
+  --color-market-nav: var(--market-nav);
+  --color-market-nav-secondary: var(--market-nav-secondary);
+  --color-market-accent: var(--market-accent);
+  --color-market-accent-hover: var(--market-accent-hover);
+  --color-market-deal: var(--market-deal);
+  --color-market-page: var(--market-page);
+  --color-brand-green: var(--brand-green);
+  --color-brand-turquoise: var(--brand-turquoise);
+  --color-brand-sky: var(--brand-sky);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Base: white + black text */
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+
+  /* Primary actions: turquoise */
+  --primary: #0d9488;
+  --primary-foreground: #ffffff;
+
+  /* Secondary surfaces: light green wash */
+  --secondary: #ecfdf5;
+  --secondary-foreground: #134e4a;
+  --muted: #f0fdf4;
+  --muted-foreground: #64748b;
+  --accent: #e0f2fe;
+  --accent-foreground: #0c4a6e;
+
+  --destructive: #dc2626;
+  --border: #e2e8f0;
+  --input: #f1f5f9;
+  --ring: #14b8a6;
+
+  /* Brand palette */
+  --brand-green: #bbf7d0;
+  --brand-turquoise: #14b8a6;
+  --brand-sky: #38bdf8;
+
+  /* Layout tokens */
+  --market-nav: #0f172a;
+  --market-nav-secondary: #134e4a;
+  --market-accent: #14b8a6;
+  --market-accent-hover: #0d9488;
+  --market-deal: #0f172a;
+  --market-page: #f8fafc;
+
+  --chart-1: #14b8a6;
+  --chart-2: #38bdf8;
+  --chart-3: #86efac;
+  --chart-4: #0f766e;
+  --chart-5: #64748b;
+  --radius: 1rem;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #0d9488;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ecfdf5;
+  --sidebar-accent-foreground: #134e4a;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #14b8a6;
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+  --primary: #2dd4bf;
+  --primary-foreground: #042f2e;
+  --secondary: #134e4a;
+  --secondary-foreground: #ecfdf5;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #0c4a6e;
+  --accent-foreground: #e0f2fe;
+  --destructive: #f87171;
+  --border: #334155;
+  --input: #334155;
+  --ring: #2dd4bf;
+  --market-nav: #020617;
+  --market-nav-secondary: #0f172a;
+  --market-accent: #2dd4bf;
+  --market-accent-hover: #14b8a6;
+  --market-deal: #f8fafc;
+  --market-page: #0f172a;
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #2dd4bf;
+  --sidebar-primary-foreground: #042f2e;
+  --sidebar-accent: #134e4a;
+  --sidebar-accent-foreground: #ecfdf5;
+  --sidebar-border: #334155;
+  --sidebar-ring: #2dd4bf;
+}
+
+@utility container {
+  width: 100%;
+  max-width: 94rem;
+  margin-inline: auto;
+  padding-inline: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-market-page text-foreground antialiased;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  h1,
+  h2,
+  h3,
+  .font-serif {
+    font-family: var(--font-serif), ui-serif, Georgia, serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .market-panel {
+    @apply rounded-2xl border border-border/70 bg-card shadow-sm;
+  }
+
+  .market-section {
+    @apply rounded-2xl border border-border/70 bg-card p-4 shadow-sm md:p-5;
+  }
+
+  .market-link {
+    @apply text-primary hover:text-brand-sky hover:underline;
+  }
+
+  .price-deal {
+    @apply text-foreground;
+  }
+
+  .brand-mark {
+    @apply text-brand-sky;
+  }
 }
