@@ -11,7 +11,7 @@ const questions = [
   {
     prompt: "What text did I send you saying I liked you bar for bar?",
     answer: "i just wanted to be upfront for a sec weve been friends for a bit and thats honestly how i saw things up until recently since right before winter break started i realized i liking you a bit more than the friend u were after out first conversation the other day about the samy issue i understand that you see us as friends and i respect that i do want to stay friends i just dont want it to turn into one of those weird friendships where one person has feeling for the other im probably going to be a little quieter for a few days while i reset nothing personal i do really value our friendship i just to mentally return there",
-    hint: "You have this one. Take your time. ♥",
+    hint: "Good luck!",
     long: true,
   },
   { prompt: "What is our song?", answer: "risk it all", hint: "You should know this." },
@@ -91,7 +91,7 @@ export default function LoveQuiz() {
             <div className="actions"><button type="button" className="hint" onClick={() => setShowHint(!showHint)}>{showHint ? "Hide hint" : "Need a hint?"}</button><button className="next" type="submit">Continue <span>→</span></button></div>
             {showHint && <p className="hint-text">{question.hint}</p>}
           </form>
-        </> : <div className="finish"><span className="corner-code">0121</span><div className="heart big-heart">♥</div><span className="eyebrow">YOU DID IT</span><h1>You know our story by heart.</h1><p>Every answer is another little reminder of how lucky I am to have you. I love our memories — and I love you even more.</p><div className="ending-note"><strong>6767</strong><span>remember this for later.. :)</span></div><div className="signature">always yours <span>♥</span></div><button className="restart" onClick={() => setIndex(0)}>Take it again</button></div>}
+        </> : <div className="finish"><span className="corner-code">0121</span><div className="heart big-heart">♥</div><span className="eyebrow">YOU DID IT</span><h1>I LOVE YOU PRINCESS.</h1><div className="ending-note"><strong>6767</strong><span>remember this for later.. :)</span></div><div className="signature">always your rheeya.. <span>♥</span></div><button className="restart" onClick={() => setIndex(0)}>Take it again</button></div>}
       </section>
     </main>
   );
